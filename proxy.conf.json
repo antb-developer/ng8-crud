@@ -1,0 +1,7 @@
+{
+  "/customers": {
+    "target": "https://ballistictest.azurewebsites.net",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

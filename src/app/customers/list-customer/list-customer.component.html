@@ -1,0 +1,49 @@
+<div class="container">
+  <br>
+  <br>
+  <div *ngFor="let alert of alerts">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+  </div>  
+  <button type="button" name="button" class="btn btn-primary" (click)="create()">Submit</button>
+  <br>
+  <br>
+  <table class="table">
+    <tr>
+      <th>{{ 'general.firstName' | translate }}</th>
+      <th>{{ 'general.lastName' | translate }}</th>
+      <th>{{ 'general.locationShort' | translate }}</th>
+      <th>{{ 'general.locationFull' | translate }}</th>
+    </tr>
+    <tr *ngFor="let customer of customers; let i = index" [class.disabled]="customer.active === false" (click)="modal(i,template)">
+      <td>{{ customer.name.split(" ")[0] }}</td>
+      <td>{{ customer.name.split(" ")[1] }}</td>
+      <td>{{ customer.location }}</td>
+      <td>{{ locations[customer.location] }}</td>
+    </tr>
+  </table>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header">        
+    Customer data
+  </div>
+  <div class="modal-body">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>
+          {{ currentCustomer.name }}
+        </td>
+        <td>
+          {{ currentCustomer.location }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="modal-footer">        
+  </div>
+</ng-template>

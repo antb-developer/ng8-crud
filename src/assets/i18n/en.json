@@ -1,0 +1,8 @@
+{
+    "general": {
+        "firstName": "First name",
+        "lastName":  "Last name",
+        "locationShort":  "Location (Short)",
+        "locationFull":  "Location (Full)"
+    }
+}
